@@ -59,7 +59,7 @@ All registers and bits in this section are expressed in a common format: the low
     </tr>
     <tr><td>[7:4]</td><td>bPn_DRV</td><td>RW</td><td>Pn port output drive capability selection, this bit is 0 to select the drive current 5mA level. This bit is 1 for P0 / P2 / P3 to select the drive current 20mA level, and for P1 to select the drive current 10mA level</td><td>0000b</td></tr>
     <tr><td>[3:0]</td><td>bPn_OC</td><td>RW</td><td>Pn port open-drain output enable, this bit is 0 to set the port as push-pull output. This bit is 1 to set the port to be open-drain output</td><td>1111b</td></tr>
-    
+
 </table>
 
 ### Pn port input and output register (Pn):
@@ -69,7 +69,7 @@ All registers and bits in this section are expressed in a common format: the low
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>Pn.0~Pn.7</td><td>RW</td><td>Pn.x pin status input and data output bits, bit-addressable</td><td>FFh</td></tr>
-    
+
 </table>
 
 ### Pn port direction control register (Pn_DIR):
@@ -79,7 +79,7 @@ All registers and bits in this section are expressed in a common format: the low
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>Pn_DIR</td><td>RW</td><td>Pn.x pin direction setting</td><td>00h</td></tr>
-    
+
 </table>
 
 ### P0 port pull-up enable register (P0_PU) and Pn port pull-up enable register (Pn_PU), where n = 1/2/3:
@@ -91,7 +91,7 @@ All registers and bits in this section are expressed in a common format: the low
     <tr><td rowspan="2">[7:0]</td><td rowspan="2">P0_PU</td><td rowspan="2">RW</td><td>P0.x pin pull-up resistor is enabled (when En_P0_Pullup = 0 is configured)</td><td>00h</td></tr>
     <td>P0.x pin pull-up resistor is enabled (when En_P0_Pullup = 1 is configured)</td><td>FFh</td></tr>
     <tr><td>[7:0]</td><td>Pn_PU</td><td>RW</td><td>Pn.x pin pull-up resistor is enabled, this bit is 0 to disable pull-up; this bit is 1 to enable pull-up</td><td>FFh</td></tr>
-    
+
 </table>
 
 The configuration of the Pn port is implemented by the combination of the bit bPn_OC in the PORT_CFG, the port direction control register Pn_DIR, and the port pull-up enable register Pn_PU, as follows.
@@ -111,18 +111,18 @@ The configuration of the Pn port is implemented by the combination of the bit bP
     <tr><td>1</td><td>1</td><td>0</td><td>High-impedance input quasi-bidirectional mode, open-drain output, no pull-up resistor on the pin, when the output changes from low to high, it automatically drives high for 2 clock cycles to speed up the conversion</td></tr>
     <tr><td>1</td><td>0</td><td>1</td><td>Weak quasi-bidirectional mode (imitation of 8051), open-drain output, support input, pin with pull-up resistor</td></tr>
     <tr><td>1</td><td>1</td><td>1</td><td>Quasi-bidirectional mode (standard 8051), open-drain output, support input, pins have pull-up resistors, when the output changes from low to high, it automatically drives high for 2 clock cycles to speed up the conversion</td></tr>
-    
+
 </table>
 
 Ports P0~P3 support pure input or push-pull output and quasi-bidirectional modes. Port P4 supports pure input or push-pull output and other modes. Each pin has a freely controllable internal pull-up resistor connected to VDD33, and a protection diode connected to GND.
 
 Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After removing P1_IE and AIN and ADC_CHANN, it can be applied to the P0, P2, and P3 ports.
 
+
+![GPIO_schematic](./images/GPIO_schematic.png "GPIO schematic")
 <div>
     <p align="center">Figure 10.2.1 I/O pin equivalent schematic</p>
 </div>
-
-![GPIO_schematic](/docs/10-GPIO/images/GPIO_schematic.png "GPIO schematic")
 
 ### P1 port input enable register (P1_IE):
 
@@ -131,7 +131,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>P1_IE</td><td>RW</td><td>P1.x pin input enable, if this bit is 0, the pin is used for ADC analog input, digital input is disabled. If this bit is 1, the digital input is enabled</td><td>FFh</td></tr>
-    
+
 </table>
 
 ## 10.3 P4 port
@@ -143,7 +143,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>P4_OUT.0~P4_OUT.7</td><td>RW</td><td>P4.x pin data output bit, bit-addressable</td><td>00h</td></tr>
-    
+
 </table>
 
 ### P4 port input register (P4_IN):
@@ -153,7 +153,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>P4_IN</td><td>R0</td><td>P4.x pin status input bit</td><td>FFh</td></tr>
-    
+
 </table>
 
 ### P4 port pull-up enable register (P4_PU):
@@ -163,7 +163,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>P4_PU</td><td>RW</td><td>P4.x pin pull-up resistor is enabled, this bit is 0 to disable pull-up; this bit is 1 to enable pull-up</td><td>FFh</td></tr>
-    
+
 </table>
 
 ### P4 port direction control register (P4_DIR):
@@ -173,7 +173,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>P4_DIR</td><td>RW</td><td>P4.x pin direction setting, this bit is 0 for input; this bit is 1 for output</td><td>00h</td></tr>
-    
+
 </table>
 
 ### P4 port configuration register (P4_CFG) and P5 port input register (P5_IN):
@@ -190,7 +190,7 @@ Figure 10.2.1 is the equivalent schematic of the P1.x pin of the P1 port. After 
     <tr><td>2</td><td>bP4_DRV</td><td>RW</td><td>P4 port output drive capability selection, this bit is 0 to select the drive current 5mA level. This bit is 1 to select the drive current 20mA level</td><td>0</td></tr>
     <tr><td>1</td><td>P5.1</td><td>R0</td><td>P5.1 pin status input bit with built-in controllable pull-down resistor</td><td>0</td></tr>
     <tr><td>0</td><td>P5.0</td><td>R0</td><td>P5.0 pin status input bit with built-in controllable pull-down resistor</td><td>0</td></tr>
-    
+
 </table>
 
 ## 10.4 GPIO Multiplexing and Mapping
@@ -212,7 +212,7 @@ Some of the I / O pins of CH559 have alternate functions. After power-on, they a
     <tr><td>2</td><td>bXBUS_CS_OE</td><td>RW</td><td>xBUS external bus chip select output enable bit. This bit is 0 to disable the output of chip select and can be decoded by external circuits. P3.4 is set as CS0 when this bit is 1 (XCS0 chip select 0, active low), and When ALE is disabled, the bus address A15 is inverted and output to P3.3 (equivalent to chip select 1, active low)</td><td>0</td></tr>
     <tr><td>1</td><td>bXBUS_AH_OE</td><td>RW</td><td>xBUS External bus high 8-bit address output enable bit, this bit is 0 to disable output. When this bit is 1, during the MOVX_@DPTR instruction access to the external bus, the P2 port output bus address is the upper 8 bits</td><td>0</td></tr>
     <tr><td>0</td><td>bXBUS_AL_OE</td><td>RW</td><td>The lower 8-bit address output enable bit of the xBUS external bus. When this bit is 0, it is a multiplexed address mode. When accessing the external bus, the lower 8 bits of the address are multiplexed with the data bus as required, and the external circuit is controlled by ALE to latch. If this bit is 1, it is the direct address mode.The lower 8-bit addresses A0~A7 are output through P4.0~P4.5 and P3.5 and P2.7.</td><td>0</td></tr>
-    
+
 </table>
 
 <div>
@@ -268,7 +268,7 @@ Some of the I / O pins of CH559 have alternate functions. After power-on, they a
     <tr><td>P5[4]</td><td> HM/bHM, ALE, XB, P5.4</td></tr>
     <tr><td>P5[5]</td><td> HP/bHP, !A15, XA, P5.5</td></tr>
     <tr><td>P5[7]</td><td> RST/bRST, P5.7</td></tr>
-    
+
 </table>
 
 The priority order from left to right described in the above table refers to the priority order when multiple functional modules compete to use the GPIO. For example, the P2 port has been set to the upper 8 bits of the output bus address. If only the A8~A11 addresses are actually used, then P2.4/P2.5 can still be used for higher priority PWM1/PWM2 functions, P2.6 It can still be used for RXD1 function, P2.7 can still be used for higher priority TXD1 or DA7 functions, so as to avoid wasting P2.4~P2.7 pins when A12~A15 address is not used.

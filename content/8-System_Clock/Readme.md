@@ -8,11 +8,11 @@ BookToC: false
 # 8. System Clock
 
 ## 8.1 Clock Block Diagram
+
+![Clock_diagram](./images/sys_clk_diagram.png "Clock Diagram")
 <div>
     <p align="center">Figure 8.1.1 Clock system and structure</p>
 </div>
-
-![Clock_diagram](/docs/8-System_clock/images/sys_clk_diagram.png "Clock Diagram")
 
 The internal clock or external clock is selected as the original clock Fosc, and then the PLL is multiplied to generate the Fpll high-frequency clock. Finally, two sets of frequency converters are used to obtain the system clock Fsys and the clock of the USB module Fusb4x.
 
@@ -29,7 +29,7 @@ The system clock Fsys is provided to each module of the CH559 directly or after 
         <th>Name</th><th>Address</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>CLOCK_CFG</td><td>B3h</td><td>System clock configuration register</td><td>98h</td></tr>
-    <tr><td>PLL_CFG</td><td>B2h</td><td>PLL clock configuration register</td><td>D8h</td></tr>  
+    <tr><td>PLL_CFG</td><td>B2h</td><td>PLL clock configuration register</td><td>D8h</td></tr>
 </table>
 
 ### System clock configuration register (CLOCK_CFG), writable only in safe mode:
@@ -52,7 +52,7 @@ The system clock Fsys is provided to each module of the CH559 directly or after 
     </tr>
     <tr><td>[7:5]</td><td>MASK_USB_4X_DIV</td><td>RW</td><td>USB clock division factor, when the value is 000b, it means 1000b</td><td>110b</td></tr>
     <tr><td>[4:0]</td><td>MASK_PLL_MULT</td><td>RW</td><td>PLL reference clock multiplier</td><td>11000b</td></tr>
-    
+
 </table>
 
 ## 8.3 Clock configuration

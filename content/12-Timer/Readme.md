@@ -26,7 +26,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
     <tr><td>TL0 </td><td>8Ah </td><td>Timer0 count low byte </td><td>xxh</td></tr>
     <tr><td>TMOD</td><td> 89h</td><td> Timer0 / 1 mode register </td><td>00h</td></tr>
     <tr><td>TCON</td><td> 88h</td><td> Timer0 / 1 control register </td><td>00h</td></tr>
-    
+
 </table>
 
 ### Timer/Counter 0/1 Control Register (TCON):
@@ -43,7 +43,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
     <tr><td>2 </td><td>IT1 </td><td>RW </td><td>INT1 External interrupt 1 trigger mode control bit. This bit is 0 to select the external interrupt to trigger at low level. This bit is 1 to select the external interrupt to trigger at falling edge.</td><td> 0</td></tr>
     <tr><td>1 </td><td>IE0 </td><td>RW </td><td>INT0 Interrupt request flag for external interrupt 0. It is automatically cleared after entering interrupt</td><td> 0</td></tr>
     <tr><td>0 </td><td>IT0 </td><td>RW </td><td>INT0 External interrupt 0 trigger mode control bit. This bit is 0 to select the external interrupt to trigger at low level. This bit is 1 to select the external interrupt to trigger at falling edge.</td><td> 0</td></tr>
-    
+
 </table>
 
 ### Timer/Counter 0/1 Mode Register (TMOD):
@@ -60,7 +60,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
     <tr><td>2 </td><td>bT0_CT </td><td>RW </td><td>Timing or counting mode selection bit, this bit is 0 to work in timing mode; this bit is 1 to work in counting mode, using the falling edge of T0 pin as clock </td><td>0</td></tr>
     <tr><td>1 </td><td>bT0_M1 </td><td>RW </td><td>Timer/Counter 0 Mode selection high</td><td> 0</td></tr>
     <tr><td>0 </td><td>bT0_M0 </td><td>RW </td><td>Timer/Counter 0 Mode selection low</td><td> 0</td></tr>
-    
+
 </table>
 
 <div>
@@ -75,7 +75,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
     <tr><td>0</td><td> 1</td><td> Mode 1: 16-bit timer / counter n. The counting unit consists of TLn and THn. When the count changes from all 16 bits to all 0s, the overflow flag TFn is set and the initial value needs to be reset</td></tr>
     <tr><td>1</td><td> 0</td><td> mode 2: 8-bit reload timer / counter n, the counting unit uses TLn, THn as the reload counting unit. When the count changes from all 8 bits to all 0s, the overflow flag TFn is set and the initial value is automatically loaded from THn</td></tr>
     <tr><td>1</td><td> 1</td><td> Mode 3: If it is timer / counter 0, then timer / counter 0 is divided into two parts TL0 and TH0, TL0 is used as an 8-bit timer / counter and occupies all control bits of Timer0; and TH0 also serves as another 8-bit timer Use, occupy TR1, TF1 and interrupt resources of Timer1, and Timer1 is still available at this time, but the start control bit TR1 and overflow flag bit TF1 cannot be used. In the case of Timer / Counter 1, entering Mode 3 will stop Timer / Counter 1.</td></tr>
-    
+
 </table>
 
 ### Timern count low byte (TLn) (n = 0, 1):
@@ -85,7 +85,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>TLn</td><td>RW</td><td>Timern count low byte</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### Timern count high byte (THn) (n = 0, 1):
@@ -95,7 +95,7 @@ Timer0 / 1 are two 16-bit timer / counters. TCON and TMOD are used to configure 
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>TLn</td><td>RW</td><td>Timern count high byte</td><td>xxh</td></tr>
-    
+
 </table>
 
 ## 12.2 Timer2
@@ -121,7 +121,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>RCAP2 </td><td>CAh</td><td> RCAP2L and RCAP2H form a 16-bit SFR</td><td> 0000h</td></tr>
     <tr><td>T2MOD </td><td>C9h</td><td> Timer2 mode register</td><td> 00h</td></tr>
     <tr><td>T2CON </td><td>C8h</td><td> Timer2 Control Register</td><td> 00h</td></tr>
-    
+
 </table>
 
 
@@ -140,7 +140,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>2 </td><td>TR2 </td><td>RW</td><td> Timer2 start / stop bit, set to 1 to start, set or cleared by software</td><td> 0</td></tr>
     <tr><td>1 </td><td>C_T2</td><td>RW</td><td> Timer2 clock source selection bit, this bit is 0 to use the internal clock; this bit is 1 to use the edge count based on the falling edge of the T2 pin</td><td> 0</td></tr>
     <tr><td>0</td><td>CP_RL2</td><td>RW</td><td> Timer2 function selection bit. If RCLK or TCLK is 1, this bit should be forced to 0. If this bit is 0, Timer2 is used as a timer / counter, and it can automatically reload the initial count value when the counter overflows or the T2EX level changes; this bit is 1 to enable the capture 2 function of Timer2 and capture the valid edge of T2EX</td><td> 0</td></tr>
-        
+
 </table>
 
 ### Timer/Counter 2 Mode Register (T2MOD):
@@ -157,7 +157,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>2</td><td>bT2_CAP_M0</td><td>RW</td><td>Timer2 capture mode low</td><td>0</td></tr>
     <tr><td>1</td><td>T2OE</td><td>RW</td><td colspan="2">Timer2 clock output enable bit, this bit is 0 to disable the output. This bit is 1 to enable the T2 pin output clock, the frequency is half of the Timer2 overflow rate</td><td>0</td></tr>
     <tr><td>0</td><td>bT2_CAP1_EN</td><td>RW</td><td colspan="2">Capture 1 mode is enabled when RCLK = 0, TCLK = 0, CP_RL2 = 1, C_T2 = 0, T2OE = 0, this bit is 1 to enable capture 1 function to capture the valid edge of T2. This bit is 0 to disable capture 1</td><td>0</td></tr>
-    
+
 </table>
 
 
@@ -169,7 +169,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>RCAP2H</td><td>RW</td><td>High byte of reload value in timer / counter mode. High byte of timer captured by CAP2 in capture mode</td><td>00h</td></tr>
     <tr><td>[7:0]</td><td>RCAP2L</td><td>RW</td><td>Low byte of reload value in timer / counter mode. Low byte of timer captured by CAP2 in capture mode</td><td>00h</td></tr>
-    
+
 </table>
 
 ### Timer2 counter (T2COUNT), only valid when bT2_CAP1_EN = 0:
@@ -180,7 +180,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>TH2</td><td>RW</td><td>High byte of current counter</td><td>00h</td></tr>
     <tr><td>[7:0]</td><td>TL2</td><td>RW</td><td>Low byte of current counter</td><td>00h</td></tr>
-    
+
 </table>
 
 ### Timer2 capture 1 data (T2CAP1), only valid when bT2_CAP1_EN = 1:
@@ -191,7 +191,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>T2CAP1H</td><td>RW</td><td>High byte of timer captured by CAP1</td><td>xxh</td></tr>
     <tr><td>[7:0]</td><td>T2CAP1L</td><td>RW</td><td>Low byte of timer captured by CAP1</td><td>xxh</td></tr>
-    
+
 </table>
 
 ## 12.3 Timer3
@@ -223,7 +223,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>T3_CK_SE_L </td><td>A4h</td><td> Timer3 clock division setting low byte </td><td>20h</td></tr>
     <tr><td>T3_CK_SE </td><td>A4h</td><td> T3_CK_SE_L and T3_CK_SE_H form a 16-bit SFR </td><td>0020h</td></tr>
     <tr><td>T3_SETUP </td><td>A3h</td><td> Timer3 setting register </td><td>04h</td></tr>
-    
+
 </table>
 
 ### Timer3 setup register (T3_SETUP):
@@ -240,7 +240,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>2</td><td>bT3_CAP_IN</td><td>R0</td><td>Input level of the current capture pin after noise filtering</td><td>1</td></tr>
     <tr><td>1</td><td>bT3_CAP_CLK</td><td>RW</td><td>This bit is 1 to enable input capture without minimum pulse width limitation.It is only valid when T3_CK_SE is 1.It is used to capture high speed signals.</td><td>0</td></tr>
     <tr><td>0</td><td>bT3_EN_CK_SE</td><td>RW</td><td>This bit is 1 to enable access to the clock divider setting register; this bit is 0 to enable access to the current count register</td><td>0</td></tr>
-    
+
 </table>
 
 ### Timer3 current count (T3_COUNT), only valid when bT3_EN_CK_SE = 0:
@@ -251,7 +251,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>T3_COUNT_H</td><td>RO</td><td>Timer3 current count high byte</td><td>00h</td></tr>
     <tr><td>[7:0]</td><td>T3_COUNT_L</td><td>RO</td><td>Timer3 current count low byte</td><td>00h</td></tr>
-    
+
 </table>
 
 ### Timer3 clock division setting register (T3_CK_SE), only valid when bT3_EN_CK_SE = 1:
@@ -262,7 +262,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>T3_CK_SE_H</td><td>RW</td><td>Timer3 clock divider high byte, only the lower 4 bits are valid, the upper 4 bits are fixed to 0</td><td>00h</td></tr>
     <tr><td>[7:0]</td><td>T3_CK_SE_L</td><td>RW</td><td>Low byte of Timer3 clock divider</td><td>20h</td></tr>
-    
+
 </table>
 
 ### Timer3 count end value register (T3_END):
@@ -273,7 +273,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     </tr>
     <tr><td>[7:0]</td><td>T3_END_H</td><td>RW</td><td>Timer3 count end high byte</td><td>xxh</td></tr>
     <tr><td>[7:0]</td><td>T3_END_L</td><td>RW</td><td>Timer3 count end low byte</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### Timer3 status register (T3_STAT):
@@ -288,7 +288,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>4</td><td>bT3_IF_ACT</td><td>RW</td><td>When bT3_IE_ACT = 1, this bit is 1 to indicate that the capture mode input signal activates the interrupt or the PWM mode data triggers the interrupt. This bit is 0 without interrupt. Cleared on write 1 or cleared when accessing FIFO</td><td>0</td></tr>
     <tr><td>4</td><td>bT3_IF_END</td><td>RW</td><td>When bT3_IE_ACT = 0, this bit is 1 to indicate the capture mode count timeout interrupt or PWM mode cycle end interrupt. If this bit is 0, there is no interrupt. Write 1 clear</td><td>0</td></tr>
     <tr><td>[3:0]</td><td>MASK_T3_FIFO_CNT</td><td>R0</td><td>Timer3's current FIFO count</td><td>0000b</td></tr>
-    
+
 </table>
 
 ### Timer3 control register (T3_CTRL):
@@ -306,7 +306,7 @@ Timer2 is a 16-bit auto-reload timer/counter. It is configured through the T2CON
     <tr><td>2</td><td>bT3_CNT_EN</td><td>RW</td><td>This bit is 1 to enable Timer3 counting. This bit is 0 to pause counting</td><td>0</td></tr>
     <tr><td>1</td><td>bT3_CLR_ALL</td><td>RW</td><td>This bit is 1 to clear the Timer3 count and FIFO, which needs to be cleared by software</td><td>1</td></tr>
     <tr><td>0</td><td>bT3_MOD_CAP</td><td>RW</td><td>Timer3 mode selection bit. If this bit is 0, Timer3 works in timer/count or PWM mode.If this bit is 1, it works in capture mode.</td><td>0</td></tr>
-    
+
 </table>
 
 In capture mode, bT3_CAP_M1 and bT3_CAP_M0 select the capture edge: when bT3_CAP_M1 and bT3_CAP_M0 are 00, the capture mode is turned off or suspended; when it is 01, the edge is activated by any edge, that is, the change in level, and the capture is from any edge to any edge; when it is 10 Activated by falling edge, capture from falling edge to falling edge. When it is 11, activate by rising edge, capture from rising edge to rising edge.
@@ -321,7 +321,7 @@ In PWM mode, bT3_CAP_M1 and bT3_CAP_M0 select the number of data repetitions: Wh
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>T3_DMA_CN</td><td>RW</td><td>The current remaining DMA count, which can be preset to the initial value, and is automatically reduced after the DMA operation</td><td>00h</td></tr>
-    
+
 </table>
 
 ### DMA current buffer address (T3_DMA):
@@ -332,7 +332,7 @@ In PWM mode, bT3_CAP_M1 and bT3_CAP_M0 select the number of data repetitions: Wh
     </tr>
     <tr><td>[7:0]</td><td>T3_DMA_AH</td><td>RW</td><td>The current high byte of the DMA address, which can be preset to the initial value. It automatically increases after DMA. Only the lower 4 bits are valid. The upper 4 bits are fixed to 0. Only the first 4K of xRAM are supported.</td><td>0xh</td></tr>
     <tr><td>[7:0]</td><td>T3_DMA_AL</td><td>RW</td><td>Low byte of the current DMA address, which can be preset to the initial value. It is automatically increased after DMA. Only the upper 7 bits are valid. The lowest bit is fixed at 0. Only even addresses are supported.</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### FIFO port (T3_FIFO):
@@ -343,7 +343,7 @@ In PWM mode, bT3_CAP_M1 and bT3_CAP_M0 select the number of data repetitions: Wh
     </tr>
     <tr><td>[7:0]</td><td>T3_FIFO_H</td><td>RW</td><td>FIFO high byte of Timer3</td><td>xxh</td></tr>
     <tr><td>[7:0]</td><td>T3_FIFO_L</td><td>RW</td><td>FIFO low byte of Timer3</td><td>xxh</td></tr>
-    
+
 </table>
 
 ## 12.4 PWM Function
@@ -373,7 +373,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
     <tr><td>PWM_CTRL</td><td>9Dh</td><td>3</td><td>02h</td></tr>
     <tr><td>PWM_DATA</td><td>9Ch</td><td>3</td><td>xxh</td></tr>
     <tr><td>PWM_DATA2</td><td>9Bh</td><td>3</td><td>xxh</td></tr>
-    
+
 </table>
 
 
@@ -384,7 +384,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>PWM_DATA2</td><td>RW</td><td>Store current data of PWM2, duty cycle of PWM2 output active level = PWM_DATA2 / PWM_CYCLE</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### PWM1 data register (PWM_DATA):
@@ -394,7 +394,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>PWM_DATA</td><td>RW</td><td>Store the current data of PWM1, the duty cycle of PWM1 output active level = PWM_DATA / PWM_CYCLE</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### PWM control register (PWM_CTRL):
@@ -413,7 +413,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
     <tr><td>2</td><td>bMFM_BIT_CNT2</td><td>R0</td><td>When bPWM_MOD_MFM = 1, it indicates the current MFM encoding progress. This bit is 0 to indicate that the lower 4 bits are being processed. A 1 indicates that the upper 4 bits are being processed.</td><td>0</td></tr>
     <tr><td>1</td><td>bPWM_CLR_ALL</td><td>RW</td><td>This bit is 1 to clear the PWM1 and PWM2 counts and FIFOs and needs to be cleared by software</td><td>1</td></tr>
     <tr><td>0</td><td>bPWM_MOD_MFM</td><td>RW</td><td>MFM encoding mode is enabled, this bit is 0 for PWM mode. This bit is 1 for MFM mode  </td><td>0</td></tr>
-    
+
 </table>
 
 ### PWM clock division setting register (PWM_CK_SE):
@@ -423,7 +423,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>PWM_CK_SE</td><td>RW</td><td>Setting the PWM Clock Divisor</td><td>00h</td></tr>
-    
+
 </table>
 
 ### PWM cycle period register (PWM_CYCLE):
@@ -433,7 +433,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>PWM_CYCLE</td><td>RW</td><td>Set the PWM cycle period, when the value is 00h, it means 100h</td><td>xxh</td></tr>
-    
+
 </table>
 
 
@@ -448,7 +448,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
 
 ### Mode 0: 13-bit timer/counter
 
-![Timer_Mode_0](/docs/12-Timer/images/tim_mod_0.png "Timer0/1 Mode 0")
+![Timer_Mode_0](./images/tim_mod_0.png "Timer0/1 Mode 0")
 
 <div>
     <p align="center">Figure 12.5.1.1 Timer0/1 Mode 0</p>
@@ -456,7 +456,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
 
 ### Mode 1: 16-bit timer/counter
 
-![Timer_Mode_1](/docs/12-Timer/images/tim_mod_1.png "Timer0/1 Mode 1")
+![Timer_Mode_1](./images/tim_mod_1.png "Timer0/1 Mode 1")
 
 <div>
     <p align="center">Figure 12.5.1.2 Timer0/1 Mode 1</p>
@@ -464,7 +464,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
 
 ### Mode 2: Automatic reload 8-bit timer/counter
 
-![Timer_Mode_2](/docs/12-Timer/images/tim_mod_2.png "Timer0/1 Mode 2")
+![Timer_Mode_2](./images/tim_mod_2.png "Timer0/1 Mode 2")
 
 <div>
     <p align="center">Figure 12.5.1.3 Timer0/1 Mode 2</p>
@@ -473,7 +473,7 @@ In practical applications, it is recommended to allow the PWM pin output and set
 
 ### Mode 3: Timer0 is decomposed into two independent 8-bit timers and counters, and the TR1 control bit of Timer1 is borrowed. Timer1 replaces the borrowed TR1 control bit by whether to start mode 3, Timer1 enters mode 3, and Timer1 stops running.
 
-![Timer_Mode_3](/docs/12-Timer/images/tim_mod_3.png "Timer0/1 Mode 3")
+![Timer_Mode_3](./images/tim_mod_3.png "Timer0/1 Mode 3")
 
 <div>
     <p align="center">Figure 12.5.1.4 Timer0 Mode 3</p>
@@ -492,7 +492,7 @@ Timer2 16-bit reload timer/counter mode:
 6. The current timer / counter status can be obtained by querying the TF2 or timer 2 interrupts.
 
 
-![Timer2_16bit](/docs/12-Timer/images/tim2_16bit.png "Timer2 16-bit")
+![Timer2_16bit](./images/tim2_16bit.png "Timer2 16-bit")
 
 <div>
     <p align="center">Figure 12.5.2.1 Timer2 16-bit reload timer/counter</p>
@@ -509,7 +509,7 @@ Timer2 serial port 0 baud rate generator mode:
 2. Set T2MOD to select the internal clock frequency of the timer. If bT2_CLK is 0, then the clock of Timer2 is Fsys / 4. If bT2_CLK is 1, then bTMR_CLK = 0 or 1 selects Fsys / 2 or Fsys as the clock.
 (3) Set RCAP2L and RCAP2H to the reload value after the timer overflows, set TR2 to 1, and start Timer2.
 
-![Timer2_baud_gen](/docs/12-Timer/images/tim2_uart0.png "Timer2 UART0 Baud Rate Generator")
+![Timer2_baud_gen](./images/tim2_uart0.png "Timer2 UART0 Baud Rate Generator")
 
 <div>
     <p align="center">Figure 12.5.2.2 Timer2 UART0 Baud Rate Generator</p>
@@ -526,7 +526,7 @@ Timer2 dual channel capture mode:
 7. When the CAP2 capture is completed, RCAP2L and RCAP2H will save the current TL2 and TH2 count values ​​and set EXF2 to generate an interrupt.The next captured RCAP2L and RCAP2H i.l be between the last captured RCAP2L and RCAP2H The difference is the signal width between the two valid edges.
 8. If bit C_T2 in T2CON is 0 and bit bT2_CAP1_EN in T2MOD is 1, then the capture function of Timer2 on the T2 pin will be enabled at the same time. When CAP1 capture is completed, T2CAP1L and T2CAP1H will save the current TL2 and TH2 And the CAP1F bit is set to generate an interrupt.
 
-![tim2_capture_mode](/docs/12-Timer/images/tim2_capture_mode.png "Timer2 capture mode")
+![tim2_capture_mode](./images/tim2_capture_mode.png "Timer2 capture mode")
 
 <div>
     <p align="center">Figure 12.5.2.3 Timer2 capture mode</p>
@@ -540,7 +540,7 @@ Timer2 dual channel capture mode:
 4. Set each control bit in T3_CTRL, select the mode, and clear bT3_CLR_ALL, set bT3_CNT_EN to start Timer3.
 5. Set T3_DMA_AL and T3_DMA_AH and T3_DMA_CN as required, set bT3_DMA_EN to enable the DMA function.
 
-![tim3_16bit_tpc](/docs/12-Timer/images/tim3_16bit_tpc.png "Timer3 16-bit timer/PWM/capture")
+![tim3_16bit_tpc](./images/tim3_16bit_tpc.png "Timer3 16-bit timer/PWM/capture")
 
 <div>
     <p align="center">Figure 12.5.3.1 Timer3 16-bit timer/PWM/capture</p>

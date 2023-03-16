@@ -66,8 +66,8 @@ SPI1 features:
     <tr><td>2</td><td>reserved</td><td>R0</td><td>reserved</td><td>0</td></tr>
     <tr><td>1</td><td>bS0_SLV_SELT</td><td>R0</td><td>Chip select active status bit in slave mode, this bit is 0 if it is not currently selected. This bit is 1 if it is currently selected</td><td>0</td></tr>
     <tr><td>0</td><td>bS0_SLV_PRELOAD</td><td>R0</td><td>Preload data status bit in slave mode, this bit is 1 to indicate that it is currently in the preload status after the chip select is valid but before the data has been transferred</td><td>0</td></tr>
-    
-    
+
+
 </table>
 
 ### SPI0 clock divider setting register (SPI0_CK_SE):
@@ -77,7 +77,7 @@ SPI1 features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>SPI0_CK_SE</td><td>RW</td><td>Setting the SPI0 Clock Divider in Master Mode</td><td>20h</td></tr>
-    
+
 </table>
 
 ### SPI0 Slave Mode Preset Data Register (SPI0_S_PRE):
@@ -87,7 +87,7 @@ SPI1 features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>SPI0_S_PRE</td><td>RW</td><td>Preload the first transfer data in slave mode</td><td>20h</td></tr>
-    
+
 </table>
 
 ### SPI0 control register (SPI0_CTRL):
@@ -104,7 +104,7 @@ SPI1 features:
     <tr><td>2</td><td> bS0_2_WIRE  </td><td>RW </td><td>SPI0 2-wire half-duplex mode enable bit. If this bit is 0, 3-wire full-duplex mode, including SCK, MOSI, and MISO. This bit is 1 2-wire half-duplex mode, including SCK, MISO.</td><td> 0 </td></tr>
     <tr><td>1</td><td> bS0_CLR_ALL </td><td>RW </td><td>This bit is 1 to clear the SPI0 interrupt flag and FIFO, which needs to be cleared by software</td><td> 1 </td></tr>
     <tr><td>0</td><td> bS0_AUTO_IF </td><td>RW </td><td>Enable bit for automatically clearing the byte reception completion interrupt flag through a valid FIFO operation. When this bit is 1, the byte reception completion interrupt flag S0_IF_BYTE is automatically cleared during a valid FIFO read and write operation.</td><td> 0 </td></tr>
-    
+
 </table>
 
 ### SPI0 data transmit and receive register (SPI0_DATA):
@@ -114,7 +114,7 @@ SPI1 features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>SPI0_DATA</td><td>RW</td><td>Including sending and receiving two physically separate FIFOs, read operations correspond to receive data FIFOs, write operations correspond to send data FIFOs, and valid read and write operations can initiate an SPI transmission</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### SPI0 status register (SPI0_STAT):
@@ -131,7 +131,7 @@ SPI1 features:
     <tr><td>2</td><td> S0_T_FIFO  </td><td>R0 </td><td colspan="2">SPI0 transmit FIFO count, valid value is 0 or 1</td><td> 0 </td></tr>
     <tr><td>1</td><td> S0_R_FIFO1 </td><td>R0 </td><td>SPI0 receive FIFO count bit 1</td><td>Valid values are 0 or 1 or 2 or 3</td><td> 0 </td></tr>
     <tr><td>0</td><td> S0_R_FIFO0 </td><td>R0 </td><td>SPI0 receive FIFO count bit 0</td><td></td><td> 0 </td></tr>
-    
+
 </table>
 
 ### 14.2.2 SPI1 Register Description
@@ -146,7 +146,7 @@ SPI1 features:
     <tr><td>4</td><td>bS1_IF_BYTE</td><td>RO</td><td>Data byte transfer completed interrupt flag bit. When this bit is 1, it indicates that a byte transfer is completed. Direct bit access Cleared or written 1 cleared, or cleared by valid FIFO operation when bS1_AUTO_IF = 1</td><td>0</td></tr>
     <tr><td>3</td><td>bS1_FREE</td><td>RW</td><td>SPI1 idle flag bit, this bit is 1 means there is no SPI shift at present, usually in the gap period between data bytes</td><td>1</td></tr>
     <tr><td>[2:0]</td><td>reserved</td><td>RO</td><td>reserved</td><td>000b</td></tr>
-    
+
 </table>
 
 ### SPI1 data transmit and receive register (SPI1_DATA):
@@ -156,7 +156,7 @@ SPI1 features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>SPI1_DATA</td><td>RW</td><td>It is actually an SPI data shift register. Read is used to receive data and write is used to send data. Effective read and write operations can start an SPI transfer.</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### SPI1 control register (SPI1_CTRL):
@@ -174,7 +174,7 @@ SPI1 features:
     <tr><td>2</td><td> bS1_2_WIRE  </td><td>RW </td><td>SPI1 2-wire half-duplex mode enable bit, this bit is 0, then 3-wire full duplex mode, including SCK1, MOSI1, MISO1. This bit is 1, then 2-wire half-duplex mode, including SCK1, MISO1</td><td>0</td></tr>
     <tr><td>1</td><td> bS1_CLR_ALL </td><td>RW </td><td>This bit is 1 to clear the SPI1 interrupt flag and FIFO, which needs to be cleared by software</td><td>1</td></tr>
     <tr><td>0</td><td> bS1_AUTO_IF </td><td>RW </td><td>Enable bit for automatically clearing the byte reception completion interrupt flag through the SPI1_DATA valid operation. When this bit is 1, it automatically clears the byte reception completion interrupt flag bS1_IF_BYTE when the SPI1_DATA is valid</td><td>0</td></tr>
-    
+
 </table>
 
 ### SPI1 clock divider setting register (SPI1_CK_SE):
@@ -184,7 +184,7 @@ SPI1 features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>SPI1_CK_SE</td><td>RW</td><td>Set the SPI1 clock division factor</td><td>20h</td></tr>
-    
+
 </table>
 
 ## 14.3 SPI Transmission Format
@@ -193,7 +193,7 @@ The SPI master mode supports two transmission modes, Mode 0 and Mode 3. You can 
 
 Mode 0: bSn_MST_CLK = 0
 
-![spi_mode_0_tim](/docs/14-SPI/images/spi_mode_0_tim.png "SPI Mode 0 Timing Diagram")
+![spi_mode_0_tim](./images/spi_mode_0_tim.png "SPI Mode 0 Timing Diagram")
 
 <div>
     <p align="center">Figure 14.3.1 SPI Mode 0 Timing Diagram</p>
@@ -201,7 +201,7 @@ Mode 0: bSn_MST_CLK = 0
 
 Mode 3: bSn_MST_CLK = 1
 
-![spi_mode_3_tim](/docs/14-SPI/images/spi_mode_3_tim.png "SPI Mode 3 Timing Diagram")
+![spi_mode_3_tim](./images/spi_mode_3_tim.png "SPI Mode 3 Timing Diagram")
 
 <div>
     <p align="center">Figure 14.3.2 SPI Mode 3 Timing Diagram</p>

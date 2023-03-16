@@ -7,9 +7,11 @@ BookToC: false
 
 # 8-bit enhanced USB microcontroller CH559
 
+[< Back](../Readme.md) | [Next >](../2-Features/Readme.md)
+
 ## 3. Package
 
-![CH559_Package](/docs/3-Package/images/package.png "CH559 Package")
+![CH559_Package](./images/package.png "CH559 Package")
 
 ### Package Description
 | Package | Package width | Pin spacing | Package description | Part No. |
