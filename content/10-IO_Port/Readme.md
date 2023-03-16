@@ -1,10 +1,3 @@
----
-title: 10. I/O Port
-type: docs
-weight: 10
-BookToC: false
----
-
 # 10. I/O Port
 
 ## 10.1 Introduction to GPIO

@@ -1,10 +1,3 @@
----
-title: 12. Timer
-type: docs
-weight: 12
-BookToC: false
----
-
 # 12. Timer
 
 ## 12.1 Timer 0/1

@@ -1,10 +1,3 @@
----
-title: 2. Features
-type: docs
-weight: 2
-BookToC: false
----
-
 # 8-bit enhanced USB microcontroller CH559
 
 ## 2. Features

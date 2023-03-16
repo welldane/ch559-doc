@@ -1,10 +1,3 @@
----
-title: 15. ADC
-type: docs
-weight: 15
-BookToC: false
----
-
 # 15. Analog-to-digital converter ADC
 
 ## 15.1 ADC Introduction
@@ -42,7 +35,7 @@ ADC main features:
     <tr><td>ADC_DMA_AH </td><td>EDh</td><td> DMA current buffer address high byte</td><td> 0xh</td></tr>
     <tr><td>ADC_DMA_AL </td><td>ECh</td><td> DMA current buffer address low byte</td><td> xxh</td></tr>
     <tr><td>ADC_DMA    </td><td>ECh</td><td> ADC_DMA_AL and ADC_DMA_AH form a 16-bit SFR</td><td> 0xxxh</td></tr>
-    
+
 </table>
 
 ### DMA current buffer address (ADC_DMA):
@@ -53,7 +46,7 @@ ADC main features:
     </tr>
     <tr><td>[7:0]</td><td>ADC_DMA_AH</td><td>RW</td><td>The current high byte of the DMA address, which can be preset to the initial value. It automatically increases after DMA. Only the lower 4 bits are valid. The upper 4 bits are fixed at 0. Only the first 4K of xRAM are supported.</td><td>0xh</td></tr>
     <tr><td>[7:0]</td><td>ADC_DMA_AL</td><td>RW</td><td>Low byte of the current DMA address, which can be preset to the initial value. It is automatically increased after DMA. Only the upper 7 bits are valid. The lowest bit is fixed at 0. Only even addresses are supported.</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### DMA Remaining Count Register (ADC_DMA_CN):
@@ -63,7 +56,7 @@ ADC main features:
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>ADC_DMA_CN</td><td>RW</td><td>The current remaining DMA count, which can be preset to the initial value, and is automatically reduced after the DMA operation</td><td>00h</td></tr>
-    
+
 </table>
 
 ### Clock divider setting register (ADC_CK_SE):
@@ -74,7 +67,7 @@ ADC main features:
     </tr>
     <tr><td>7</td><td>bADC_CHK_CLK_SEL</td><td>RW</td><td>AIN7 level detection delay clock frequency selection, if this bit is 0, low speed 1x clock frequency. If this bit is 1, high speed 4x clock frequency</td><td>0</td></tr>
     <tr><td>[6:0]</td><td>MASK_ADC_CK_SE</td><td>RW</td><td>ADC clock division factor to set the internal ADC working clock</td><td>10h</td></tr>
-    
+
 </table>
 
 ### ADC status register (ADC_STAT):
@@ -91,7 +84,7 @@ ADC main features:
     <tr><td>2 </td><td>bADC_CHANN_ID    </td><td>R0</td><td> is the current channel identification flag in the automatic alternate channel mode. 0 means AIN0 or AIN6. 1 means AIN1 or AIN4 or AIN7</td><td>0</td></tr>
     <tr><td>2 </td><td>bADC_DATA_OK     </td><td>RO</td><td> In the manual channel selection mode, the ADC conversion is completed and the result is ready. A 1 indicates that the ADC data is ready and the ADC converter is idle. A 0 indicates that the ADC is in progress and the data is not ready.</td><td>1</td></tr>
     <tr><td>[1:0]</td><td> MASK_ADC_FIFO_CNT</td><td> R0 </td><td>ADC FIFO current count</td><td>00b</td></tr>
-    
+
 </table>
 
 MASK_ADC_FIFO_CNT consists of bADC_FIFO_CNT1 and bADC_FIFO_CNT0, which is used to display the ADC's FIFO count.
@@ -104,7 +97,7 @@ MASK_ADC_FIFO_CNT consists of bADC_FIFO_CNT1 and bADC_FIFO_CNT0, which is used t
     <tr><td>01b </td><td>1 data in FIFO</td></tr>
     <tr><td>10b </td><td>FIFO is full, there are 2 data in FIFO</td></tr>
     <tr><td>11b </td><td>unknown error</td></tr>
-    
+
 </table>
 
 ### ADC Control Register (ADC_CTRL):
@@ -118,7 +111,7 @@ MASK_ADC_FIFO_CNT consists of bADC_FIFO_CNT1 and bADC_FIFO_CNT0, which is used t
     <tr><td>5 </td><td>bADC_CHANN_MOD1 </td><td>RW </td><td>ADC channel mode high</td><td>0</td></tr>
     <tr><td>4 </td><td>bADC_CHANN_MOD0 </td><td>RW </td><td>ADC channel mode low</td><td>0</td></tr>
     <tr><td>[3:0] </td><td>MASK_ADC_CYCLE </td><td>RW</td><td> ADC running cycle number, 0 means manual sampling; non-zero value means setting the running cycle of automatic sampling (counted by ADC clock)</td><td>0000b</td></tr>
-    
+
 </table>
 
 MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC channel control mode flag.
@@ -131,7 +124,7 @@ MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC chan
     <tr><td>01b </td><td>Auto alternate channel mode, switch between AIN0 and AIN1 automatically</td></tr>
     <tr><td>10b </td><td>Auto Alternate Channel Mode, automatically alternate between AIN6 and AIN4</td></tr>
     <tr><td>11b </td><td>Auto Alternate Channel Mode, automatically alternate between AIN6 and AIN7</td></tr>
-    
+
 </table>
 
 ### ADC channel selection register (ADC_CHANN):
@@ -141,7 +134,7 @@ MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC chan
         <th>Bit</th><th>Name</th><th>Access</th><th>Description</th><th>Reset value</th>
     </tr>
     <tr><td>[7:0]</td><td>ADC_CHANN</td><td>RW</td><td>Select the current ADC analog input channel, select one from the 8 channels, bits 0~7 correspond to AIN0~AIN7 respectively</td><td>00h</td></tr>
-    
+
 </table>
 
 ### ADC's FIFO port (ADC_FIFO):
@@ -152,7 +145,7 @@ MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC chan
     </tr>
     <tr><td>[7:0]</td><td>ADC_FIFO_H</td><td>RO</td><td>ADC FIFO high byte, only the lower 4 bits are valid, the upper 4 bits are fixed to 0</td><td>0xh</td></tr>
     <tr><td>[7:0]</td><td>ADC_FIFO_L</td><td>RO</td><td>ADC FIFO low byte</td><td>xxh</td></tr>
-    
+
 </table>
 
 ### ADC setup register (ADC_SETUP):
@@ -169,7 +162,7 @@ MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC chan
     <tr><td>2</td><td> bADC_POWER_EN    </td><td>RW</td><td> ADC power control bit of the sampling conversion module. This bit is 0 to turn off the power of the ADC module and enter the sleep state. A bit of 1 to turn on</td><td>0</td></tr>
     <tr><td>1</td><td> bADC_EXT_SW_EN   </td><td>RW</td><td> Power control bit of the extended analog switch module. This bit is 0 to disable the extended analog switch module. 1 to enable the bit.</td><td>0</td></tr>
     <tr><td>0</td><td> bADC_AIN7_CHK_EN </td><td>RW</td><td> Detect the power control bit of AIN7 low-level module. This bit is 0 to disable detection of AIN7 low-level module. 1 to enable</td><td>0</td></tr>
-    
+
 </table>
 
 ### ADC extended analog switch control register (ADC_EX_SW):
@@ -186,7 +179,7 @@ MASK_ADC_CHANN consisting of bADC_CHANN_MOD1 and bADC_CHANN_MOD0 is the ADC chan
     <tr><td>2 </td><td>bADC_RESOLUTION</td><td> RW</td><td> ADC resolution selection bit, this bit is 0 to select 10-bit resolution. This bit is 1 to select 11-bit resolution</td><td>0</td></tr>
     <tr><td>1 </td><td>bADC_AIN7_DLY1 </td><td>RW </td><td>Delay control bit for detecting AIN7 low level 1</td><td>0</td></tr>
     <tr><td>0 </td><td>bADC_AIN7_DLY0 </td><td>RW </td><td>Delay control bit for detecting AIN7 low level 0</td><td>0</td></tr>
-    
+
 </table>
 
 bADC_AIN7_DLY1 and bADC_AIN7_DLY0 form MASK_ADC_AIN7_DLY, which is used to select the delay after detecting the level change of AIN7: 00 is no delay, 01 is the longest delay, 10 is the longer delay, and 11 is the shorter delay.

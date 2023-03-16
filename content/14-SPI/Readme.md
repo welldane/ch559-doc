@@ -1,10 +1,3 @@
----
-title: 14. SPI
-type: docs
-weight: 14
-BookToC: false
----
-
 # 14. Synchronous Serial Interface SPI
 
 ## 14.1 Introduction to SPI

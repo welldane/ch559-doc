@@ -1,10 +1,3 @@
----
-title: 4. Pin descriptions
-type: docs
-weight: 4
-BookToC: false
----
-
 # 8-bit enhanced USB microcontroller CH559
 
 ## 4. Pin descriptions

@@ -1,21 +1,14 @@
----
-title: 6. Memory structure
-type: docs
-weight: 6
-BookToC: false
----
-
 # 6. Memory structure
 
 ## 6.1 Memory space
 
 CH559 addressing space is divided into program storage space, internal data storage space, and external data storage space.
 
+![Memory_structure](./images/mem_struct.png "Memory structure")
 <div>
     <p align="center">Figure 6.1 Memory Structure</p>
 </div>
 
-![Memory_structure](/docs/6-Memory_Structure/images/mem_struct.png "Memory structure")
 
 ## 6.2 Program Storage Space
 
@@ -27,9 +20,6 @@ Code Flash includes application code for low address areas and bootstrap code fo
 
 Configuration Information Configuration Information A total of 16 bits of data, set by the programmer as needed, refer to Table 6.1.
 
-<div>
-    <p align="center">Table 6.2 Description of flash-ROM configuration information</p>
-</div>
 
 <table>
     <tr>
@@ -45,6 +35,10 @@ Configuration Information Configuration Information A total of 16 bits of data, 
     <tr><td>8</td><td>Must_0</td><td>(automatically set to 0 by the programmer as needed)</td><td>0</td></tr>
     <tr><td>[7:0]</td><td>All_1</td><td>(Automatically set to FFh by the programmer as needed)</td><td>FFh</td></tr>
 </table>
+<div>
+    <p align="center">Table 6.2 Description of flash-ROM configuration information</p>
+</div>
+
 
 ## 6.3 Data Storage Space
 
@@ -70,7 +64,7 @@ The external data storage space is 64KB in total, as shown in Figure 6.1, and pa
     <tr><td>ROM_ADDR_H</td><td>85h</td><td>flash-ROM address register high byte</td><td>xxh</td></tr>
     <tr><td>ROM_ADDR_L</td><td>84h</td><td>flash-ROM address register low byte</td><td>xxh</td></tr>
     <tr><td>ROM_ADDR</td><td>84h</td><td>ROM_ADDR_L and ROM_ADDR_H form a 16-bit SFR</td><td>xxxxh</td></tr>
-    
+
 </table>
 
 ### flash-ROM address register (ROM_ADDR):

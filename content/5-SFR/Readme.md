@@ -1,10 +1,3 @@
----
-title: 5. Special function register SFR
-type: docs
-weight: 5
-BookToC: false
----
-
 # 5. Special function register SFR
 
 The following abbreviations may be used in describing the registers in this manual:
@@ -31,7 +24,7 @@ Some SFRs have one or more aliases, such as: SPI0_CK_SE/SPI0_S_PRE, UDEV_CTRL/UH
 
 Partial addresses correspond to multiple independent SFRs, for example: TL2/T2CAP1L, TH2/T2CAP1H, SAFE_MOD/CHIP_ID, T3_COUNT_L/T3_CK_SE_L, T3_COUNT_H/T3_CK_SE_H, SER1_FIFO/SER1_RBR/SER1_THR/SER1_DLL, SER1_IER/SER1_DLM, SER1_IIR/SER1_FCR, SER1_ADDR/SER1_DIV, ROM_CTRL/ROM_STATUS.
 
-xSFR occupies the 2440h-298Fh address range of the xdata type of the external data storage space, or the 40H-8Fh address range of the pdata type. xSFR can only be accessed in bytes by indirect addressing via the MOVX instruction. 
+xSFR occupies the 2440h-298Fh address range of the xdata type of the external data storage space, or the 40H-8Fh address range of the pdata type. xSFR can only be accessed in bytes by indirect addressing via the MOVX instruction.
 
 The default is based on the DPTR pointer; however, after bXIR_XSFR is set, the faster R0 or R1 can be used as a pdata type pointer to access xSFRs named `pU*` and `pLED_*`.
 
@@ -44,7 +37,7 @@ The CH559 contains all the registers of the 8051 standard SFR, and other device 
     <p align="center">Table 5.1 Special Function Register Table</p>
 </div>
 
-![SFR_Table](/docs/5-SFR/images/SFR_Table.png "SFR Table")
+![SFR_Table](./images/SFR_Table.png "SFR Table")
 
 Remarks: (1), Text in red means it can be addressed by bit; (2), the following is the corresponding description of the color box.
 
@@ -127,7 +120,7 @@ Remarks: (1), Text in red means it can be addressed by bit; (2), the following i
     <tr><td>P3</td><td>B0h</td><td>P3 port input and output registers</td><td>1111 1111b</td></tr>
     <tr><td>P2</td><td>A0h</td><td>P2 port input and output registers</td><td>1111 1111b</td></tr>
     <tr><td>P1</td><td>90h</td><td>P1 port input and output registers</td><td>1111 1111b</td></tr>
-    <tr><td>P0</td><td>80h</td><td>P0 port input and output registers</td><td>1111 1111b</td></tr>   
+    <tr><td>P0</td><td>80h</td><td>P0 port input and output registers</td><td>1111 1111b</td></tr>
     <tr><td rowspan="6">Timer/Counter 0 and 1 registers</td><td>TH1</td><td>8Dh</td><td>Timer1 count high byte</td><td>xxxx xxxxb</td></tr>
     <tr><td>TH0</td><td>8Ch</td><td>Timer0 count high byte</td><td>xxxx xxxxb</td></tr>
     <tr><td>TL1</td><td>8Bh3</td><td>Timer1 count low byte</td><td>xxxx xxxxb</td></tr>
@@ -294,7 +287,7 @@ Remarks: (1), Text in red means it can be addressed by bit; (2), the following i
     <tr><td>DPL</td><td>82h</td><td>data address pointer low 8 bits</td><td>00h</td></tr>
     <tr><td>DPTR</td><td>82h</td><td>DPL and DPH form 16-bit SFR</td><td>0000h</td></tr>
     <tr><td>SP</td><td>81h</td><td>stack pointer</td><td>07h</td></tr>
-    
+
 </table>
 
 ### B register (B):

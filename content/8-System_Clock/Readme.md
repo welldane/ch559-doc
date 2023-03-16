@@ -1,10 +1,3 @@
----
-title: 8. System Clock
-type: docs
-weight: 8
-BookToC: false
----
-
 # 8. System Clock
 
 ## 8.1 Clock Block Diagram

@@ -1,10 +1,3 @@
----
-title: 9. Interrupt
-type: docs
-weight: 9
-BookToC: false
----
-
 # 9. Interrupt
 
 The CH559 chip supports 14 sets of interrupt signal sources, including 6 sets of interrupts compatible with the standard MCS51: INT0, T0, INT1, T1, UART0, T2, and extended 8 sets of interrupts: SPI0, TMR3, USB, ADC, UART1, PWM1 GPIO, WDOG, among which GPIO interrupt can be selected from 7 I/O pins.
@@ -65,7 +58,7 @@ The CH559 chip supports 14 sets of interrupt signal sources, including 6 sets of
     <tr><td>2</td><td>EX1</td><td>RW</td><td>External interrupt 1 enable bit, this bit is 1 to enable the INT1 interrupt. masked to 0</td><td>0</td></tr>
     <tr><td>1</td><td>ET0</td><td>RW</td><td>Timer 0 interrupt enable bit, this bit is 1 to enable the T0 interrupt. masked to 0</td><td>0</td></tr>
     <tr><td>0</td><td>EX0</td><td>RW</td><td>External interrupt 0 and LED control card interrupt enable bit, this bit is 1 to enable INT0 / LED interrupt, selected by bLED_OUT_EN. masked to 0</td><td>0</td></tr>
-    
+
 </table>
 
 ### Extended interrupt enable register (IE_EX):
@@ -82,7 +75,7 @@ The CH559 chip supports 14 sets of interrupt signal sources, including 6 sets of
     <tr><td>2</td><td>IE_USB</td><td>RW</td><td>USB interrupt enable bit, this bit is 1 to enable USB interrupt; 0 to mask</td><td>0</td></tr>
     <tr><td>1</td><td>IE_TMR3</td><td>RW</td><td>Timer 3 interrupt enable bit, this bit is 1 to enable Timer3 interrupt; 0 to mask</td><td>0</td></tr>
     <tr><td>0</td><td>IE_SPI0</td><td>RW</td><td>SPI0 interrupt enable bit, this bit is 1 to enable SPI0 interrupt; 0 to mask</td><td>0</td></tr>
-    
+
 </table>
 
 ### GPIO interrupt enable register (GPIO_IE):
@@ -101,7 +94,7 @@ This bit is 1 to select the edge interrupt mode. When a valid edge is input to t
     <tr><td>2</td><td>bIE_P5_7_HI</td><td>RW</td><td>This bit is 1 to enable the P5.7 interrupt (level mode is active high and edge mode is active on rising edge); this bit is 0 to disable</td><td>0</td></tr>
     <tr><td>1</td><td>bIE_P4_1_LO</td><td>RW</td><td>This bit is 1 to enable the P4.1 interrupt (active in low level in level mode and valid in falling edge in edge mode); this bit is 0 to disable</td><td>0</td></tr>
     <tr><td>0</td><td>bIE_RXD0_LO</td><td>RW</td><td>This bit is 1 to enable the UART0 receive pin interrupt (level mode is active low, edge mode is active falling edge); this bit is 0 to disable. Select RXD0 or RXD0_ pin according to bUART0_PIN_X = 0/1</td><td>0</td></tr>
-    
+
 </table>
 
 ### Interrupt Priority Control Register (IP):
@@ -118,7 +111,7 @@ This bit is 1 to select the edge interrupt mode. When a valid edge is input to t
     <tr><td>2</td><td>PX1</td><td>RW</td><td>Interrupt priority control bit for external interrupt 1</td><td>0</td></tr>
     <tr><td>1</td><td>PT0</td><td>RW</td><td>timer 0 interrupt priority control bit</td><td>0</td></tr>
     <tr><td>0</td><td>PX0</td><td>RW</td><td>External Interrupt 0 and Interrupt Priority Control Bit for LED Control Card Interrupt</td><td>0</td></tr>
-    
+
 </table>
 
 ### Extended interrupt priority control register (IP_EX):
@@ -153,5 +146,5 @@ The IP and IP_EX registers are used to set the interrupt priority. If a bit is s
     <tr><td>0</td><td>1</td><td>Low priority interrupt is currently executing</td></tr>
     <tr><td>1</td><td>0</td><td>High priority interrupt is currently executing</td></tr>
     <tr><td>1</td><td>1</td><td>Unexpected state, unknown error</td></tr>
-    
+
 </table>

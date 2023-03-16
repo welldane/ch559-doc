@@ -1,10 +1,3 @@
----
-title: 11. External bus xBUS
-type: docs
-weight: 11
-BookToC: false
----
-
 # 11. External bus xBUS
 
 ## 11.1 External bus registers
@@ -23,7 +16,7 @@ BookToC: false
     <tr><td>2</td><td>bDPTR_AUTO_INC</td><td>RW</td><td>Enable auto-increment DPTR by 1 after the MOVX_@DPTR instruction is completed</td><td>0</td></tr>
     <tr><td>1</td><td>reserved</td><td>R0</td><td>reserved</td><td>0</td></tr>
     <tr><td>0</td><td>DPS</td><td>RW</td><td><p>Dual DPTR data pointer selection bits:</p>This bit is 0 to select DPTR0. This bit is 1 to select DPTR1</td><td>0</td></tr>
-    
+
 </table>
 
 
@@ -41,7 +34,7 @@ BookToC: false
     <tr><td>2</td><td>bXBUS0_HOLD</td><td>RW</td><td>Select XBUS0 hold time: if this bit is 0, it will take 1 clock cycle. If this bit is 1, it will take 2 clock cycles</td><td>1</td></tr>
     <tr><td>1</td><td>bXBUS0_WIDTH1</td><td>RW</td><td>XBUS0 bus pulse width high order</td><td>1</td></tr>
     <tr><td>0</td><td>bXBUS0_WIDTH0</td><td>RW</td><td>XBUS0 bus pulse width low bit</td><td>1</td></tr>
-    
+
 </table>
 
 ## 11.2 External bus pins
@@ -68,7 +61,7 @@ BookToC: false
     <tr><td>P5.5</td><td>!A15</td><td>!A15</td><td>Bus address A15 inverting output pin, equivalent to chip select 1 output, address range 8000h~FFFFh, active low, available only in ALE enabled state</td></tr>
     <tr><td rowspan="2">P5.4</td><td></td><td>ALE</td><td>Multiplexed low 8-bit address latch control output pin, active high</td></tr>
     <tr><td>ALE</td><td></td><td>System frequency 12-division clock Fsys / 12 output pin, duty cycle 1/12</td></tr>
-    
+
 </table>
 
 
@@ -93,5 +86,5 @@ When bXBUS_CS_OE = 1, the inverting signal of bus address A15 will select the ou
     <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>ALE only outputs the system's 12th-frequency clock signal</td></tr>
     <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>ALE outputs the lower 8-bit address latch signal only on the bus</td></tr>
     <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>ALE outputs the lower 8-bit address latch signal when accessing the bus, and outputs the system's main frequency 12-frequency clock signal when idle</td></tr>
-    
+
 </table>

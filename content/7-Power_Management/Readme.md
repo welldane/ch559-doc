@@ -1,10 +1,3 @@
----
-title: 7. Power management
-type: docs
-weight: 7
-BookToC: false
----
-
 # 7. Power management, sleep and reset
 
 ## 7.1 External power input
@@ -23,10 +16,6 @@ After the power is turned on or the system is reset, the CH559 is running by def
 
 ## 7.2 Power and Sleep Control Registers
 
-<div>
-    <p align="center">Table 7.2.1 List of Power and Sleep Control Registers</p>
-</div>
-
 <table>
     <tr>
         <th>Name</th><th>Address</th><th>Description</th><th>Reset value</th>
@@ -35,8 +24,12 @@ After the power is turned on or the system is reset, the CH559 is running by def
     <tr><td>RESET_KEEP</td><td>FEh</td><td>reset holding register</td><td>00h</td></tr>
     <tr><td>WAKE_CTRL</td><td>EBh</td><td>Sleep Wake Control Register</td><td>00h</td></tr>
     <tr><td>SLEEP_CTRL</td><td>EAh</td><td>Sleep control register</td><td>00h</td></tr>
-    <tr><td>PCON</td><td>87h</td><td>Power Control Register</td><td>10h</td></tr>   
+    <tr><td>PCON</td><td>87h</td><td>Power Control Register</td><td>10h</td></tr>
 </table>
+<div>
+    <p align="center">Table 7.2.1 List of Power and Sleep Control Registers</p>
+</div>
+
 
 ### Watchdog Count Register (WDOG_COUNT):
 <table>

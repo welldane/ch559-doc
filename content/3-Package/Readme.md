@@ -1,13 +1,4 @@
----
-title: 3. Package
-type: docs
-weight: 3
-BookToC: false
----
-
 # 8-bit enhanced USB microcontroller CH559
-
-[< Back](../Readme.md) | [Next >](../2-Features/Readme.md)
 
 ## 3. Package
 
